@@ -212,7 +212,7 @@ KAFKA_CFG_ADVERTISED_LISTENERS=PLAINTEXT://kafka:9092,EXTERNAL://localhost:9094;
 
 ## Kafka Producer Setup (Patient Service)
 
-Add the following to `application.properties`
+Add the following to `application.yml`
 ```
 spring.kafka.consumer.key-deserializer=org.apache.kafka.common.serialization.StringDeserializer
 spring.kafka.consumer.value-deserializer=org.apache.kafka.common.serialization.ByteArrayDeserializer
