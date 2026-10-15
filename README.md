@@ -1,4 +1,80 @@
+# Patient Management System
 
+A production-style **Patient Management System** built with **Java and Spring Boot**, designed using a **microservices architecture** to demonstrate modern backend engineering practices.
+
+The system provides a secure and scalable platform for managing patient information while separating authentication, patient management, billing, and API gateway responsibilities into independent services.
+
+## Architecture
+
+The application is composed of several microservices:
+
+- **API Gateway** — Provides a single entry point to the system, handles request routing, JWT authentication, and rate limiting.
+- **Auth Service** — Handles user authentication and JWT-based authorization.
+- **Patient Service** — Provides REST APIs for creating, retrieving, and managing patient records.
+- **Billing Service** — Manages billing accounts and communicates with the Patient Service using **gRPC**.
+
+The services communicate through a combination of **REST, gRPC, and asynchronous messaging**, depending on the use case.
+
+## Key Features
+
+- 🔐 **JWT-based authentication and authorization**
+- 🚪 **API Gateway** for centralized routing and security
+- 🛡️ **Redis-backed rate limiting** to protect APIs from excessive traffic
+- 👥 **Patient management** with RESTful APIs
+- 💳 **Billing account creation** through gRPC communication
+- 📨 **Event-driven communication** using Apache Kafka
+- 🗄️ **PostgreSQL** for persistent data storage
+- 🐳 **Docker** for containerized services and infrastructure
+- 🔄 **Microservices architecture** with independently deployable services
+- 📖 API documentation and testing using OpenAPI/Swagger
+
+## Technologies
+
+**Backend**
+- Java
+- Spring Boot
+- Spring Cloud Gateway
+- Spring Data JPA
+- Spring Security
+- JWT
+
+**Communication**
+- REST APIs
+- gRPC
+- Apache Kafka
+
+**Infrastructure**
+- PostgreSQL
+- Redis
+- Docker / Docker Compose
+
+**Development**
+- Maven
+- IntelliJ IDEA
+- Git / GitHub
+- OpenAPI / Swagger
+
+## Security & Rate Limiting
+
+The API Gateway acts as the security boundary for the application. Incoming requests are routed to the appropriate microservice, while protected endpoints require a valid JWT.
+
+Redis is used to implement distributed rate limiting at the gateway level. Different services and endpoints can have different rate limits to protect the system from excessive traffic and abuse.
+
+For example, authentication endpoints use stricter limits than normal patient-management operations.
+
+## Project Goals
+
+This project was built to gain practical experience designing and developing **distributed backend systems**, with a focus on:
+
+- Microservice architecture
+- Secure API design
+- Inter-service communication
+- Distributed rate limiting
+- Event-driven architecture
+- Containerization
+- Database design
+- Scalable backend development
+- Production-oriented software engineering practices
 # Patient Service
 
 ---

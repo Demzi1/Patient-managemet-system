@@ -7,7 +7,7 @@ import static io.restassured.RestAssured.given;
 import static io.restassured.RestAssured.when;
 import static org.hamcrest.Matchers.notNullValue;
 
-public class PatientIntegratrionTest {
+public class PatientIntegrationTest {
     @BeforeAll
     static  void setUp(){
         RestAssured.baseURI = "http://localhost:4004";
@@ -37,6 +37,7 @@ public class PatientIntegratrionTest {
                 .when()
                 .get("/api/patients")
                 .then()
+
                 .statusCode(200)
                 .body("patients", notNullValue());
 
